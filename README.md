@@ -1,4 +1,4 @@
-#BusinessFinder
+# BusinessFinder
 
 BusinessFinder is an MVP project that scrapes local business data, stores it in PostgreSQL, and enriches it by analyzing company websites for social media links such as Instagram, TikTok, and Facebook.
 
@@ -20,7 +20,7 @@ Converts the scraped JSON data and imports it into a PostgreSQL database.
 ### Website Analysis Script
 Visits business websites to check for links to social media platforms (Instagram, TikTok, Facebook) and saves the results in the database.
 
-##Requirements
+## Requirements
 
 Before running the project, ensure you have the following:
 
