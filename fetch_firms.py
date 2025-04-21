@@ -93,4 +93,4 @@ for query in QUERIES:
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(all_results, f, ensure_ascii=False, indent=2)
 
-print(f"\nSaved output to {output_file}")
+print(f"\nOutput saved to {output_file}")
