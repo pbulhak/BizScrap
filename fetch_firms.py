@@ -26,7 +26,7 @@ def get_places(query, location, api_key):
 
             next_page_token = data.get("next_page_token")
             if next_page_token:
-                print(">>> Kolejna strona wyników...")
+                print(">>> Next page...")
                 time.sleep(2)  
                 params = {
                     "pagetoken": next_page_token,
@@ -35,7 +35,7 @@ def get_places(query, location, api_key):
             else:
                 break
         else:
-            print("Błąd API:", response.status_code)
+            print("API Error:", response.status_code)
             break
 
     return places
@@ -51,7 +51,7 @@ def get_place_details(place_id, api_key):
     if response.status_code == 200:
         return response.json().get("result", {})
     else:
-        print("Błąd API (details):", response.status_code)
+        print("Api Error (details):", response.status_code)
         return {}
 
 
@@ -67,7 +67,7 @@ existing_ids = set(entry["place_id"] for entry in all_results)
 
 
 for query in QUERIES:
-    print(f"\n>>> Szukam dla zapytania: {query}")
+    print(f"\n>>> Searching: {query}")
     places = get_places(query, LOCATION, api_key)
 
     for place in places:
@@ -86,11 +86,11 @@ for query in QUERIES:
                 }
                 all_results.append(entry)
                 existing_ids.add(place_id)
-                print("Dodano:", entry["name"])
+                print("Added:", entry["name"])
             time.sleep(0.1)  
 
 
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(all_results, f, ensure_ascii=False, indent=2)
 
-print(f"\nZapisano wyniki do {output_file}")
+print(f"\nSaved output to {output_file}")
