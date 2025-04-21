@@ -1,4 +1,4 @@
-LOCATION = "Stare Polesie, Łódź"
-QUERIES = ["produkcja kosmetyków"]
+LOCATION = "City, Country"
+QUERIES = ["keyword1", "keyword2", "keyword3"] 
 
 
