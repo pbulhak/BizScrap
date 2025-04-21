@@ -19,7 +19,7 @@ with open('results_unique.json', 'r', encoding='utf-8') as f:
 
 for item in data:
     cur.execute("""
-        INSERT INTO firmy (name, address, place_id, rating, user_ratings_total, website, types)
+        INSERT INTO {TABLE_NAME} (name, address, place_id, rating, user_ratings_total, website, types)
         VALUES (%s, %s, %s, %s, %s, %s, %s)
     """, (
         item['name'],
