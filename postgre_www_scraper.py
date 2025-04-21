@@ -51,7 +51,7 @@ for company in companies:
     
     
     update_query = sql.SQL("""
-        UPDATE firmy
+        UPDATE {TABLE_NAME}
         SET instagram = %s, tiktok = %s, facebook = %s
         WHERE id = %s;
     """)
@@ -64,4 +64,4 @@ for company in companies:
 cursor.close()
 conn.close()
 
-print("Zaktualizowano linki do social mediów.")
+print("Links are updated.")
