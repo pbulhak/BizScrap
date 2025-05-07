@@ -5,7 +5,6 @@ import time
 from config import LOCATION, QUERIES
 from dotenv import load_dotenv
 
-query = QUERIES
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
